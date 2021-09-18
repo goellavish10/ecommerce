@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "ecommerce site",
+  "main": "app.js",
+  "author": "Lavish Goyal",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.6"
+  }
+}
