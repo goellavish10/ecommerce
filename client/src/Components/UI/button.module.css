@@ -1,0 +1,21 @@
+.btn {
+  font-family: "Bree Serif", serif;
+  background-color: #c07474;
+  margin-top: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn a {
+  text-decoration: none;
+  color: black;
+  padding: 2px 4px;
+}
+
+.btn:hover {
+  background-color: wheat;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}

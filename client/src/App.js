@@ -1,5 +1,11 @@
+import Navbar from "./Components/Navbar/Navbar";
+import Button from "./Components/UI/Button";
 const App = () => {
-  return <h1>Hello World!</h1>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default App;
