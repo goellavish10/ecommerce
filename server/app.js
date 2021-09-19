@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 
 const userRoute = require("./routes/users/user");
-// const authRoute = require("./routes/users/user");
+const cartRoute = require("./routes/cart/cart");
 
 mongoose.connect(process.env.MONGO_URI, (err) => {
   if (err) return console.log(err);
@@ -20,5 +20,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/users", userRoute);
+app.use("/api/cart", cartRoute);
 
 app.listen(3000, () => console.log("Server is running on PORT 3000"));

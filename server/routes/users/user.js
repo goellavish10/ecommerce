@@ -43,15 +43,16 @@ router.post("/register", async (req, res) => {
         expiresIn: "1d",
       }
     );
-    res.cookie("nToken", token, {
-      maxAge: 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    });
-    res.json({
-      status: "ok",
-      message: "User registered successfuly.",
-      savedUser,
-    });
+    res
+      .cookie("nToken", token, {
+        maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      .json({
+        status: "ok",
+        message: "User registered successfuly.",
+        savedUser,
+      });
   } catch (err) {
     if (err.code === 11000) {
       console.log(err);
