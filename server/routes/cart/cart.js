@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcryptjs");
 const Cart = require("../../Models/Cart");
 
-const jwt = require("jsonwebtoken");
-const { authorization, isAdminAuthorization } = require("../auth/auth");
+const { authorization } = require("../auth/auth");
 
 // ADD ITEMS TO THE CART
 router.post("/update-cart", authorization, async (req, res) => {
