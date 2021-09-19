@@ -47,7 +47,11 @@ router.post("/register", async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
     });
-    res.json({ status: "ok", savedUser });
+    res.json({
+      status: "ok",
+      message: "User registered successfuly.",
+      savedUser,
+    });
   } catch (err) {
     if (err.code === 11000) {
       console.log(err);
@@ -154,6 +158,17 @@ router.put("/:id", authorization, async (req, res) => {
       status: "error",
       error: "Please enter correct existing password",
     });
+  }
+});
+
+router.delete("/:id", authorization, async (req, res) => {
+  try {
+    const _id = req.params.id;
+    await User.findByIdAndDelete({ _id });
+    res.json({ status: "ok", message: "User deleted..." });
+  } catch (err) {
+    console.log(err);
+    return res.json({ status: "error", error: "Something went wrong" });
   }
 });
 
