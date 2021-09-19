@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../../Models/User");
 
 const jwt = require("jsonwebtoken");
-const { authorization } = require("../auth/auth");
+const { authorization, isAdminAuthorization } = require("../auth/auth");
 
 // REGISTER USER
 router.post("/register", async (req, res) => {
@@ -111,7 +111,53 @@ router.get("/logout", (req, res) => {
   return res.json({ status: "ok", message: "Successfully logged out!" });
 });
 
-router.get("/protected", authorization, (req, res) => {
+// Update Password
+router.put("/:id", authorization, async (req, res) => {
+  const _id = req.params.id;
+  const { oldPassword, newPassword: plainTextPassword } = req.body;
+
+  if (oldPassword === plainTextPassword) {
+    return res.json({
+      status: "error",
+      error: "New password cannot be same!",
+    });
+  }
+
+  // console.log(oldPassword, plainTextPassword);
+
+  const user = await User.findOne({ _id });
+  if (!user) return res.json({ status: "error", error: "User not found!" });
+
+  if (await bcrypt.compare(oldPassword, user.password)) {
+    try {
+      const password = await bcrypt.hash(plainTextPassword, 10);
+      const updatedUser = await User.findByIdAndUpdate(
+        { _id },
+        {
+          $set: {
+            password: password,
+          },
+        },
+        { new: true }
+      );
+      res.json({
+        status: "ok",
+        message: "Password updated Succesfully",
+        user: updatedUser,
+      });
+    } catch (err) {
+      console.log(err);
+      res.json({ status: "error", error: "something went wrong!" });
+    }
+  } else {
+    return res.json({
+      status: "error",
+      error: "Please enter correct existing password",
+    });
+  }
+});
+
+router.get("/protected", isAdminAuthorization, (req, res) => {
   return res.json({ user: req.user });
 });
 
