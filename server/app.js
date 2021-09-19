@@ -9,16 +9,10 @@ const app = express();
 const userRoute = require("./routes/users/user");
 // const authRoute = require("./routes/users/user");
 
-mongoose.connect(
-  process.env.MONGO_URI,
-  {
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) console.log(err);
-    console.log("MongoDB connected");
-  }
-);
+mongoose.connect(process.env.MONGO_URI, (err) => {
+  if (err) return console.log(err);
+  console.log("MongoDB connected");
+});
 
 app.use(express.json());
 app.use(cookieParser());

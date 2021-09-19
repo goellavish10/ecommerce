@@ -9,7 +9,7 @@ const auth = {
     try {
       const data = jwt.verify(token, process.env.JWT_SECRET);
       console.log(data);
-      req.user = data._id;
+      req.user = data;
       return next();
     } catch (err) {
       console.log(err);

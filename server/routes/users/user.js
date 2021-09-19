@@ -36,9 +36,13 @@ router.post("/register", async (req, res) => {
 
   try {
     const savedUser = await newUser.save();
-    const token = jwt.sign({ _id: savedUser._id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { _id: savedUser._id, isAdmin: savedUser.isAdmin },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d",
+      }
+    );
     res.cookie("nToken", token, {
       maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
@@ -80,9 +84,13 @@ router.post("/login", async (req, res) => {
     }
 
     if (await bcrypt.compare(plainTextPassword, user.password)) {
-      const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: "1d",
-      });
+      const token = jwt.sign(
+        { _id: user._id, isAdmin: user.isAdmin },
+        process.env.JWT_SECRET,
+        {
+          expiresIn: "1d",
+        }
+      );
       return res
         .cookie("nToken", token, {
           maxAge: 24 * 60 * 60 * 1000,
@@ -104,7 +112,7 @@ router.get("/logout", (req, res) => {
 });
 
 router.get("/protected", authorization, (req, res) => {
-  return res.json({ user: { id: req.user } });
+  return res.json({ user: req.user });
 });
 
 module.exports = router;
