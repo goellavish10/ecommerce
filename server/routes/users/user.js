@@ -161,6 +161,7 @@ router.put("/:id", authorization, async (req, res) => {
   }
 });
 
+// DELETE USER
 router.delete("/:id", authorization, async (req, res) => {
   try {
     const _id = req.params.id;
@@ -169,6 +170,19 @@ router.delete("/:id", authorization, async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.json({ status: "error", error: "Something went wrong" });
+  }
+});
+
+// GET A USER
+router.get("/find/:id", isAdminAuthorization, async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const user = await User.findById({ _id });
+    const { password, ...otherDetails } = user._doc;
+    res.json({ status: "ok", otherDetails });
+  } catch (err) {
+    console.log(err);
+    res.json({ status: "error", error: "Something went wrong" });
   }
 });
 
