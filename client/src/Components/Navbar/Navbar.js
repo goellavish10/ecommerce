@@ -122,6 +122,91 @@ const StyledNavbar = styled.header`
     font-family: "Reem Kufi", sans-serif;
     padding: 0px;
   }
+
+  @media only screen and (min-width: 877px) and (max-width: 972px) {
+    .navbar .num2 {
+      top: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 877px) {
+    .navbar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar::before {
+      left: 0px;
+      top: 0px;
+    }
+
+    .navigation {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar .navigation li {
+      font-size: 16px;
+      padding: 15px 10px;
+    }
+
+    .navbar .call {
+      width: 20px;
+      height: 20px;
+      right: 0.5rem;
+    }
+
+    .navbar .num1 {
+      top: 1.5rem;
+      right: 0.7rem;
+      font-size: 0.7rem;
+    }
+
+    .navbar .num2 {
+      top: 0.3rem;
+      right: 0rem;
+      font-size: 0.65rem;
+    }
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 320px) {
+    .navbar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navigation {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar .navigation li {
+      font-size: 14px;
+      padding: 15px 10px;
+    }
+
+    .navbar .call {
+      width: 16px;
+      height: 16px;
+      right: 0.3rem;
+    }
+
+    .navbar .num1 {
+      top: 1.5rem;
+      right: 0.7rem;
+      font-size: 0.65rem;
+    }
+
+    .navbar .num2 {
+      top: 0.3rem;
+      right: 0rem;
+      font-size: 0.55rem;
+    }
+  }
 `;
 
 const Navbar = () => {
