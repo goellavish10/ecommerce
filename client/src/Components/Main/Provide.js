@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 // initialization
 AOS.init({
   duration: 1000,
+  once: true,
 });
 
 const StyledDiv = styled.div`
@@ -189,7 +190,7 @@ const Provide = () => {
       <section id="section3" class="section">
         <h1>We Provide</h1>
         <div class="services">
-          <div class="box" data-aos="fade-right">
+          <div class="box" data-aos="fade-down">
             <img class="img1" id="img1" src={PurchaseImg} alt="Sell goodies" />
             <h2>Purchase Of Goodies</h2>
             <p>
@@ -209,7 +210,7 @@ const Provide = () => {
               world.
             </p>
           </div>
-          <div class="box" data-aos="fade-left">
+          <div class="box" data-aos="fade-down">
             <img class="img3" id="img3" src={EduImg} alt="Sell goodies" />
             <h2>Education Of Girlchild</h2>
             <p>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CallBlack from "../assets/call-black.png";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.header`
   .navbar {
@@ -216,24 +217,30 @@ const Navbar = () => {
         <img className="image1" src={Logo} alt="T-Trant fashions" />
         <ul className="navigation">
           <li>
-            <a href="#home" className="active">
-              Home
-            </a>
+            <Link to="/">
+              <a href="#home" className="active">
+                Home
+              </a>
+            </Link>
           </li>
           <li>
-            <a href="#deals" className="act">
-              Deals
-            </a>
+            <Link to="/">
+              <a href="#deals" className="act">
+                Deals
+              </a>
+            </Link>
           </li>
           <li>
-            <a href="#business" className="act">
+            <Link to="/business" className="act">
               Business
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" className="act">
-              Contact Us
-            </a>
+            <Link to="/">
+              <a href="#contact" className="act">
+                Contact Us
+              </a>
+            </Link>
           </li>
         </ul>
         <button className="call" id="call"></button>
