@@ -218,16 +218,14 @@ const Navbar = () => {
         <ul className="navigation">
           <li>
             <Link to="/">
-              <a href="#home" className="active">
+              <a href="/" className="active">
                 Home
               </a>
             </Link>
           </li>
           <li>
-            <Link to="/">
-              <a href="#deals" className="act">
-                Deals
-              </a>
+            <Link to="/deals" className="act">
+              Deals
             </Link>
           </li>
           <li>
@@ -236,10 +234,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/">
-              <a href="#contact" className="act">
-                Contact Us
-              </a>
+            <Link to="/contact" className="act">
+              Contact Us
             </Link>
           </li>
         </ul>

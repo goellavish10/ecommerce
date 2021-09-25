@@ -7,6 +7,8 @@ import More from "./Components/Main/More";
 import Footer from "./Components/Main/Footer";
 import Business from "./Components/Others/Business";
 import { Switch, Route } from "react-router-dom";
+import Contact from "./Components/Others/Contact";
+import Deals from "./Components/Others/Deals";
 const App = () => {
   return (
     <>
@@ -16,12 +18,14 @@ const App = () => {
           render={() => (
             <Fragment>
               <Business />
-              <Navbar />
               <Footer />
             </Fragment>
           )}
           exact
         />
+        <Route path="/contact" component={Contact} exact />
+        <Route path="/deals" component={Deals} exact />
+        <Route path="/deals/" component={Deals} />
         <Route
           exact
           path="/"

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import Money from "../assets/money.jpg";
 import BusinessImg from "../assets/business.jpg";
+import { Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
   top: 0px;
@@ -644,7 +645,9 @@ const Business = () => {
     <StyledDiv>
       <div className="progress">
         <div>
-          <img className="img" src={Logo} alt="T-Trant fashions" />
+          <Link to="/" style={{ cursor: "pointer" }}>
+            <img className="img" src={Logo} alt="T-Trant fashions" />
+          </Link>
         </div>
         <img src={Money} alt="Make Money" className="img1" />
       </div>
