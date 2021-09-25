@@ -7,7 +7,7 @@ const Footer = () => {
         </a>
       </h4>
 
-      <footer>Created by SkillyPandaz | &copy;2021 All Rights Reserved</footer>
+      <footer>Created by Vanshita Dev | &copy;2021 All Rights Reserved</footer>
     </>
   );
 };
