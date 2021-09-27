@@ -4,7 +4,11 @@ const bcrypt = require("bcryptjs");
 const User = require("../../Models/User");
 
 const jwt = require("jsonwebtoken");
-const { authorization, isAdminAuthorization } = require("../auth/auth");
+const {
+  authorization,
+  isAdminAuthorization,
+  isAuthenticated,
+} = require("../auth/auth");
 
 // REGISTER USER
 router.post("/register", async (req, res) => {
@@ -101,9 +105,16 @@ router.post("/login", async (req, res) => {
           maxAge: 24 * 60 * 60 * 1000,
           httpOnly: true,
         })
-        .json({ status: "ok", message: "succesfully logged in!" });
+        .json({
+          status: "ok",
+          message: "succesfully logged in!",
+          token: token,
+        });
     } else {
-      return res.json({ status: "error", error: "Wrong Username or password" });
+      return res.json({
+        status: "error",
+        error: "Wrong Username or password",
+      });
     }
   } catch (err) {
     console.log(err);
@@ -187,8 +198,24 @@ router.get("/find/:id", isAdminAuthorization, async (req, res) => {
   }
 });
 
-router.get("/protected", isAdminAuthorization, (req, res) => {
-  return res.json({ user: req.user });
+// GET ROUTES (Checking for authentication)
+router.get("/login", (req, res) => {
+  const token = req.query.token;
+
+  const { success, user } = isAuthenticated(token);
+
+  if (success) {
+    return res.json({
+      status: "ok",
+      message: "User already logged in!",
+      user,
+    });
+  } else {
+    return res.json({
+      status: "notAuth",
+      message: "Please log in!",
+    });
+  }
 });
 
 module.exports = router;

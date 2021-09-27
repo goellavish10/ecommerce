@@ -187,11 +187,16 @@ const StyledDiv = styled.div`
 const Provide = () => {
   return (
     <StyledDiv>
-      <section id="section3" class="section">
+      <section id="section3" className="section">
         <h1>We Provide</h1>
-        <div class="services">
-          <div class="box" data-aos="fade-down">
-            <img class="img1" id="img1" src={PurchaseImg} alt="Sell goodies" />
+        <div className="services">
+          <div className="box" data-aos="fade-down">
+            <img
+              className="img1"
+              id="img1"
+              src={PurchaseImg}
+              alt="Sell goodies"
+            />
             <h2>Purchase Of Goodies</h2>
             <p>
               We provide variety of goodies for each and every taste, keeping in
@@ -200,8 +205,8 @@ const Provide = () => {
               amount*.
             </p>
           </div>
-          <div class="box" data-aos="fade-down">
-            <img class="img2" id="img2" src={SellImg} alt="Sell goodies" />
+          <div className="box" data-aos="fade-down">
+            <img className="img2" id="img2" src={SellImg} alt="Sell goodies" />
             <h2>BUSINESS with us</h2>
             <p>
               Now instead of purchasing you can even sell your goodies with us.
@@ -210,8 +215,8 @@ const Provide = () => {
               world.
             </p>
           </div>
-          <div class="box" data-aos="fade-down">
-            <img class="img3" id="img3" src={EduImg} alt="Sell goodies" />
+          <div className="box" data-aos="fade-down">
+            <img className="img3" id="img3" src={EduImg} alt="Sell goodies" />
             <h2>Education Of Girlchild</h2>
             <p>
               From your every purchase we donate Rs. 1/ for the education of the

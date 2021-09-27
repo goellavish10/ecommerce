@@ -29,4 +29,18 @@ const isAdminAuthorization = (req, res, next) => {
   });
 };
 
-module.exports = { authorization, isAdminAuthorization };
+const isAuthenticated = (token) => {
+  try {
+    const data = jwt.verify(token, process.env.JWT_SECRET);
+    const user = data;
+    return {
+      success: true,
+      user,
+    };
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+};
+
+module.exports = { authorization, isAdminAuthorization, isAuthenticated };

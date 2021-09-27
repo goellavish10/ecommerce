@@ -229,30 +229,30 @@ const StyledDiv = styled.div`
 const More = () => {
   return (
     <StyledDiv>
-      <div class="container">
-        <section id="section4" class="section">
-          <div id="buttons" class="buttons">
-            <button class="btn1">
+      <div className="container">
+        <section id="section4" className="section">
+          <div id="buttons" className="buttons">
+            <button className="btn1">
               <a href="deals.html" target="_blank">
                 Visit Our Latest Trendy Collections
               </a>
             </button>
             <br />
-            <button class="btn2">
+            <button className="btn2">
               <a href="contact.html" target="_blank">
                 Want To Contact Us?
               </a>
             </button>
           </div>
-          <form class="form">
+          <form className="form">
             <p>Want to give us a feedback?</p>
             <textarea
-              class="text"
+              className="text"
               name="mytext"
               placeholder="Type here"
             ></textarea>
             <br />
-            <input type="submit" class="btn3" />
+            <input type="submit" className="btn3" />
           </form>
         </section>
         <aside id="aside">

@@ -9,6 +9,8 @@ import Business from "./Components/Others/Business";
 import { Switch, Route } from "react-router-dom";
 import Contact from "./Components/Others/Contact";
 import Deals from "./Components/Others/Deals";
+import SignUp from "./Components/User/SignUp";
+import Login from "./Components/User/Login";
 const App = () => {
   return (
     <>
@@ -26,6 +28,26 @@ const App = () => {
         <Route path="/contact" component={Contact} exact />
         <Route path="/deals" component={Deals} exact />
         <Route path="/deals/" component={Deals} />
+        <Route
+          path="/signup"
+          render={() => (
+            <Fragment>
+              <Navbar />
+              <SignUp />
+            </Fragment>
+          )}
+          exact
+        />
+        <Route
+          path="/login"
+          render={() => (
+            <Fragment>
+              <Navbar />
+              <Login />
+            </Fragment>
+          )}
+          exact
+        />
         <Route
           exact
           path="/"

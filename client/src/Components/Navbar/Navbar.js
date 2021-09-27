@@ -2,6 +2,9 @@ import styled from "styled-components";
 import CallBlack from "../assets/call-black.png";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import Axios from "axios";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
 const StyledNavbar = styled.header`
   .navbar {
@@ -211,16 +214,31 @@ const StyledNavbar = styled.header`
 `;
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    if (Cookies.get("authToken")) {
+      Axios.get("http://localhost:5000/api/users/login", {
+        params: { token: Cookies.get("authToken") },
+      })
+        .then((response) => {
+          console.log(response.data);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => console.error(err));
+    }
+  }, []);
+
+  const logoutHandler = () => {
+    alert("Are you sure you want to log out?");
+  };
   return (
     <StyledNavbar>
       <div className="navbar">
         <img className="image1" src={Logo} alt="T-Trant fashions" />
         <ul className="navigation">
           <li>
-            <Link to="/">
-              <a href="/" className="active">
-                Home
-              </a>
+            <Link to="/" className="active">
+              Home
             </Link>
           </li>
           <li>
@@ -238,6 +256,20 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
+          {!isLoggedIn && (
+            <li>
+              <Link to="/signup" className="act">
+                Sign Up
+              </Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li>
+              <a href="/" onClick={logoutHandler}>
+                Logout
+              </a>
+            </li>
+          )}
         </ul>
         <button className="call" id="call"></button>
         <div id="number">
