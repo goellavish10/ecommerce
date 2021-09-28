@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import useInput from "../../hooks/use-input";
 import { useEffect, useRef } from "react";
@@ -96,7 +96,6 @@ const StyledInput = styled.input`
 `;
 
 const Login = () => {
-  const history = useHistory();
   useEffect(() => {
     if (Cookies.get("authToken")) {
       Axios.get("http://localhost:5000/api/users/login", {
@@ -104,11 +103,11 @@ const Login = () => {
       })
         .then((response) => {
           console.log(response.data);
-          history.push("/");
+          window.location.href = "/";
         })
         .catch((err) => console.error(err));
     }
-  }, [history]);
+  }, []);
   let axiosConfig = {
     withCredentials: false,
   };
@@ -140,6 +139,7 @@ const Login = () => {
       Cookies.set("authToken", data.token, { expires: 1 });
 
       console.log(data);
+      window.location.href = "/";
     } catch (err) {
       console.log(err);
     }

@@ -213,7 +213,7 @@ const StyledNavbar = styled.header`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ showModal }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     if (Cookies.get("authToken")) {
@@ -228,8 +228,8 @@ const Navbar = () => {
     }
   }, []);
 
-  const logoutHandler = () => {
-    alert("Are you sure you want to log out?");
+  const popupHandler = () => {
+    showModal();
   };
   return (
     <StyledNavbar>
@@ -265,9 +265,9 @@ const Navbar = () => {
           )}
           {isLoggedIn && (
             <li>
-              <a href="/" onClick={logoutHandler}>
+              <Link to="/" onClick={popupHandler}>
                 Logout
-              </a>
+              </Link>
             </li>
           )}
         </ul>
