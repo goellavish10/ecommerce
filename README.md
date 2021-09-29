@@ -38,12 +38,9 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#developers">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -51,7 +48,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://ibb.co/qrYVHcr)
+[![Screenshot-2021-09-29-102619.png](https://i.postimg.cc/jC09HSpC/Screenshot-2021-09-29-102619.png)](https://postimg.cc/H8zBHdsC)
 
 There are a lot of ecommerce web apps available and this one among them developed by two enthusiastic developers.
 
@@ -141,6 +138,6 @@ Project Link: [https://github.com/goellavish10/ecommerce](https://github.com/goe
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[linkedin-shield]: https://www.linkedin.com/in/goellavish10/
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/goellavish10
 [product-screenshot]: https://ibb.co/qrYVHcr
