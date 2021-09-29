@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CallBlack from "../assets/call-black.png";
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
@@ -237,37 +237,37 @@ const Navbar = ({ showModal }) => {
         <img className="image1" src={Logo} alt="T-Trant fashions" />
         <ul className="navigation">
           <li>
-            <Link to="/" className="active">
+            <NavLink to="/" activeClassName="active" exact className="act">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/deals" className="act">
+            <NavLink to="/deals" activeClassName="active" exact className="act">
               Deals
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/business" className="act">
+            <NavLink to="/business" activeClassName="active" className="act">
               Business
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact" className="act">
+            <NavLink to="/contact" activeClassName="active" className="act">
               Contact Us
-            </Link>
+            </NavLink>
           </li>
           {!isLoggedIn && (
             <li>
-              <Link to="/signup" className="act">
+              <NavLink to="/signup" activeClassName="active" exact>
                 Sign Up
-              </Link>
+              </NavLink>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/" onClick={popupHandler}>
+              <NavLink to="/" onClick={popupHandler}>
                 Logout
-              </Link>
+              </NavLink>
             </li>
           )}
         </ul>

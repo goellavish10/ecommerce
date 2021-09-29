@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
@@ -233,15 +234,15 @@ const More = () => {
         <section id="section4" className="section">
           <div id="buttons" className="buttons">
             <button className="btn1">
-              <a href="deals.html" target="_blank">
+              <Link to="/deals" target="_blank">
                 Visit Our Latest Trendy Collections
-              </a>
+              </Link>
             </button>
             <br />
             <button className="btn2">
-              <a href="contact.html" target="_blank">
+              <Link to="/contact" target="_blank">
                 Want To Contact Us?
-              </a>
+              </Link>
             </button>
           </div>
           <form className="form">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import BgImg from "../assets/nav_img.jpg";
 import Button from "../UI/Button";
@@ -57,7 +58,7 @@ const Intro = () => {
           Because the beauty begins when you get yourself the best
         </h2>
         <Button>
-          <a href="#deals">Order Now</a>
+          <Link to="/deals">Order Now</Link>
         </Button>
       </div>
     </StyledSection>
