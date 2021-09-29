@@ -123,7 +123,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@lavishG10](https://twitter.com/lavishG10) - lavishgoyal1301@gmail.com
+Twitter - [@lavishG10](https://twitter.com/lavishG10) - Email : lavishgoyal1301@gmail.com
 
 Project Link: [https://github.com/goellavish10/ecommerce](https://github.com/goellavish10/ecommerce)
 
