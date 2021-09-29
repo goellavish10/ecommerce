@@ -1,6 +1,3 @@
-[![Contributors][contributors-shield]][https://github.com/goellavish10/ecommerce/graphs/contributors]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/goellavish10/]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
