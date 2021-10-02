@@ -1,0 +1,412 @@
+[
+  {
+    "img": "img1",
+    "price": "1299",
+    "cat": "handbags"
+  },
+  {
+    "img": "img2",
+    "price": "1399",
+    "cat": "handbags"
+  },
+  {
+    "img": "img1",
+    "price": "1599",
+    "cat": "handbags"
+  },
+  {
+    "img": "img3",
+    "price": "899",
+    "cat": "handbags"
+  },
+  {
+    "img": "img4",
+    "price": "1199",
+    "cat": "handbags"
+  },
+  {
+    "img": "img5",
+    "price": "1599",
+    "cat": "handbags"
+  },
+  {
+    "img": "img6",
+    "price": "1299",
+    "cat": "handbags"
+  },
+  {
+    "img": "img7",
+    "price": "2199",
+    "cat": "handbags"
+  },
+  {
+    "img": "img8",
+    "price": "1499",
+    "cat": "handbags"
+  },
+  {
+    "img": "img9",
+    "price": "1399",
+    "cat": "handbags"
+  },
+  {
+    "img": "img10",
+    "price": "1199",
+    "cat": "handbags"
+  },
+  {
+    "img": "img11",
+    "price": "1499",
+    "cat": "handbags"
+  },
+  {
+    "img": "img12",
+    "price": "1299",
+    "cat": "handbags"
+  },
+  {
+    "img": "img13",
+    "price": "1699",
+    "cat": "handbags"
+  },
+  {
+    "img": "img14",
+    "price": "999",
+    "cat": "handbags"
+  },
+  {
+    "img": "img15",
+    "price": "1299",
+    "cat": "handbags"
+  },
+  {
+    "img": "img16",
+    "price": "1799",
+    "cat": "handbags"
+  },
+  {
+    "img": "img18",
+    "price": "1199",
+    "cat": "watches"
+  },
+  {
+    "img": "img19",
+    "price": "899",
+    "cat": "watches"
+  },
+  {
+    "img": "img20",
+    "price": "599",
+    "cat": "watches"
+  },
+  {
+    "img": "img21",
+    "price": "1200",
+    "cat": "watches"
+  },
+  {
+    "img": "img22",
+    "price": "1200",
+    "cat": "watches"
+  },
+  {
+    "img": "img23",
+    "price": "2200",
+    "cat": "watches"
+  },
+  {
+    "img": "img24",
+    "price": "1199",
+    "cat": "watches"
+  },
+  {
+    "img": "img25",
+    "price": "1150",
+    "cat": "watches"
+  },
+  {
+    "img": "img26",
+    "price": "1399",
+    "cat": "watches"
+  },
+  {
+    "img": "img27",
+    "price": "1599",
+    "cat": "watches"
+  },
+  {
+    "img": "img28",
+    "price": "1699",
+    "cat": "watches"
+  },
+  {
+    "img": "img29",
+    "price": "1099",
+    "cat": "watches"
+  },
+  {
+    "img": "img30",
+    "price": "499",
+    "cat": "watches"
+  },
+  {
+    "img": "img31",
+    "price": "799",
+    "cat": "watches"
+  },
+  {
+    "img": "img32",
+    "price": "1499",
+    "cat": "watches"
+  },
+  {
+    "img": "img17",
+    "price": "1199",
+    "cat": "watches"
+  },
+  {
+    "img": "img33",
+    "price": "899",
+    "cat": "rings"
+  },
+  {
+    "img": "img34",
+    "price": "999",
+    "cat": "rings"
+  },
+  {
+    "img": "img35",
+    "price": "1899",
+    "cat": "rings"
+  },
+  {
+    "img": "img36",
+    "price": "809",
+    "cat": "rings"
+  },
+  {
+    "img": "img37",
+    "price": "879",
+    "cat": "rings"
+  },
+  {
+    "img": "img38",
+    "price": "599",
+    "cat": "rings"
+  },
+  {
+    "img": "img39",
+    "price": "800",
+    "cat": "rings"
+  },
+  {
+    "img": "img41",
+    "price": "799",
+    "cat": "rings"
+  },
+  {
+    "img": "img42",
+    "price": "800",
+    "cat": "rings"
+  },
+  {
+    "img": "img43",
+    "price": "1899",
+    "cat": "rings"
+  },
+  {
+    "img": "img44",
+    "price": "809",
+    "cat": "rings"
+  },
+  {
+    "img": "img45",
+    "price": "1999",
+    "cat": "rings"
+  },
+  {
+    "img": "img46",
+    "price": "2000",
+    "cat": "rings"
+  },
+  {
+    "img": "img47",
+    "price": "1499",
+    "cat": "rings"
+  },
+  {
+    "img": "img48",
+    "price": "1899",
+    "cat": "rings"
+  },
+  {
+    "img": "img49",
+    "price": "299",
+    "cat": "earrings"
+  },
+  {
+    "img": "img50",
+    "price": "399",
+    "cat": "earrings"
+  },
+  {
+    "img": "img51",
+    "price": "499",
+    "cat": "earrings"
+  },
+  {
+    "img": "img51",
+    "price": "599",
+    "cat": "earrings"
+  },
+  {
+    "img": "img52",
+    "price": "399",
+    "cat": "earrings"
+  },
+  {
+    "img": "img53",
+    "price": "199",
+    "cat": "earrings"
+  },
+  {
+    "img": "img54",
+    "price": "299",
+    "cat": "earrings"
+  },
+  {
+    "img": "img55",
+    "price": "399",
+    "cat": "earrings"
+  },
+  {
+    "img": "img56",
+    "price": "299",
+    "cat": "earrings"
+  },
+  {
+    "img": "img57",
+    "price": "599",
+    "cat": "earrings"
+  },
+  {
+    "img": "img58",
+    "price": "799",
+    "cat": "earrings"
+  },
+  {
+    "img": "img59",
+    "price": "799",
+    "cat": "earrings"
+  },
+  {
+    "img": "img60",
+    "price": "699",
+    "cat": "earrings"
+  },
+  {
+    "img": "img61",
+    "price": "699",
+    "cat": "earrings"
+  },
+  {
+    "img": "img62",
+    "price": "399",
+    "cat": "earrings"
+  },
+  {
+    "img": "img63",
+    "price": "299",
+    "cat": "earrings"
+  },
+  {
+    "img": "img64",
+    "price": "199",
+    "cat": "earrings"
+  },
+  {
+    "img": "img65",
+    "price": "299",
+    "cat": "fashion"
+  },
+  {
+    "img": "img66",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img66",
+    "price": "699",
+    "cat": "fashion"
+  },
+  {
+    "img": "img67",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img68",
+    "price": "399",
+    "cat": "fashion"
+  },
+  {
+    "img": "img69",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img70",
+    "price": "599",
+    "cat": "fashion"
+  },
+  {
+    "img": "img71",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img72",
+    "price": "499",
+    "cat": "fashion"
+  },
+  {
+    "img": "img73",
+    "price": "599",
+    "cat": "fashion"
+  },
+  {
+    "img": "img74",
+    "price": "699",
+    "cat": "fashion"
+  },
+  {
+    "img": "img75",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img76",
+    "price": "899",
+    "cat": "fashion"
+  },
+  {
+    "img": "img77",
+    "price": "699",
+    "cat": "fashion"
+  },
+  {
+    "img": "img78",
+    "price": "599",
+    "cat": "fashion"
+  },
+  {
+    "img": "img79",
+    "price": "199",
+    "cat": "fashion"
+  },
+  {
+    "img": "img80",
+    "price": "499",
+    "cat": "fashion"
+  }
+]

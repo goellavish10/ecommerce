@@ -8,6 +8,7 @@ const app = express();
 
 const userRoute = require("./routes/users/user");
 const cartRoute = require("./routes/cart/cart");
+const productRoute = require("./routes/products/products");
 
 mongoose.connect(process.env.MONGO_URI, (err) => {
   if (err) return console.log(err);
@@ -35,5 +36,6 @@ app.use(function (req, res, next) {
 
 app.use("/api/users", userRoute);
 app.use("/api/cart", cartRoute);
+app.use("/api/products", productRoute);
 
 app.listen(5000, () => console.log("Server is running on PORT 5000"));
