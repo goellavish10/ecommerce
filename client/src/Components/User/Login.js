@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Axios from "axios";
 import useInput from "../../hooks/use-input";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Cookies from "js-cookie";
 
 const StyledDiv = styled.div`
@@ -96,18 +96,23 @@ const StyledInput = styled.input`
 `;
 
 const Login = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     if (Cookies.get("authToken")) {
       Axios.get("http://localhost:5000/api/users/login", {
-        params: { token: Cookies.get("authToken") },
+        headers: {
+          Authorization: Cookies.get("authToken"),
+        },
       })
         .then((response) => {
           console.log(response.data);
-          window.location.href = "/";
+          if (response.data.message === "User already logged in!")
+            setIsLoggedIn(true);
         })
         .catch((err) => console.error(err));
     }
   }, []);
+
   let axiosConfig = {
     withCredentials: false,
   };
@@ -125,21 +130,23 @@ const Login = () => {
   });
   const loginHandler = async () => {
     try {
-      const response = await Axios.post(
+      Axios.post(
         "http://localhost:5000/api/users/login",
         {
           email: enteredEmail,
           password: passRef.current.value,
         },
         axiosConfig
-      );
+      )
+        .then((response) => {
+          const data = response.data;
 
-      const data = response.data;
+          Cookies.set("authToken", data.token, { expires: 1 });
 
-      Cookies.set("authToken", data.token, { expires: 1 });
-
-      console.log(data);
-      window.location.href = "/";
+          console.log(data);
+          window.location.href = "/";
+        })
+        .catch((err) => console.log(err));
     } catch (err) {
       console.log(err);
     }
@@ -154,13 +161,14 @@ const Login = () => {
       console.log("Something went wrong");
     }
   };
-  return (
+  return isLoggedIn ? (
+    <Redirect to="/" />
+  ) : (
     <StyledDiv>
       <div className="form">
         <form onSubmit={submitHandler}>
           <div className="header">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to creatre your account</p>
+            <h1>Login</h1>
           </div>
           <hr />
           <div className="details">

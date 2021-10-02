@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import CallBlack from "../assets/call-black.png";
+import CartBlack from "../assets/cartBlack.png";
 import Logo from "../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
@@ -83,7 +83,7 @@ const StyledNavbar = styled.header`
 
   .navbar .call::before {
     content: "";
-    background: url(${CallBlack}) no-repeat center center/cover;
+    background: url(${CartBlack}) no-repeat center center/cover;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -215,14 +215,19 @@ const StyledNavbar = styled.header`
 
 const Navbar = ({ showModal }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     if (Cookies.get("authToken")) {
       Axios.get("http://localhost:5000/api/users/login", {
-        params: { token: Cookies.get("authToken") },
+        headers: {
+          Authorization: Cookies.get("authToken"),
+        },
       })
         .then((response) => {
           console.log(response.data);
-          setIsLoggedIn(true);
+          if (response.data.message === "User already logged in!")
+            setIsLoggedIn(true);
         })
         .catch((err) => console.error(err));
     }
@@ -231,6 +236,11 @@ const Navbar = ({ showModal }) => {
   const popupHandler = () => {
     showModal();
   };
+
+  const loginPage = location.pathname.split("/")[1];
+
+  const checkLoggedInStatus = !isLoggedIn && loginPage === "login";
+  console.log(checkLoggedInStatus);
   return (
     <StyledNavbar>
       <div className="navbar">
@@ -258,8 +268,8 @@ const Navbar = ({ showModal }) => {
           </li>
           {!isLoggedIn && (
             <li>
-              <NavLink to="/signup" activeClassName="active" exact>
-                Sign Up
+              <NavLink to="/signup" activeClassName="active" className="act">
+                {loginPage === "login" ? "Login" : "Sign Up"}
               </NavLink>
             </li>
           )}
@@ -272,10 +282,6 @@ const Navbar = ({ showModal }) => {
           )}
         </ul>
         <button className="call" id="call"></button>
-        <div id="number">
-          <h3 className="num1">Customer Care:</h3>
-          <p className="num2">+91-1234567890 /80 /70</p>
-        </div>
       </div>
     </StyledNavbar>
   );

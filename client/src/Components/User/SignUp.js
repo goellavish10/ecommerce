@@ -97,14 +97,32 @@ const StyledInput = styled.input`
 
 const SignUp = () => {
   const history = useHistory();
+  // useEffect(() => {
+  //   if (Cookies.get("authToken")) {
+  //     Axios.get("http://localhost:5000/api/users/login", {
+  //       headers: {
+  //         Authorization: Cookies.get("authToken"),
+  //       },
+  //     })
+  //       .then((response) => {
+  //         console.log(response.data);
+  //       })
+  //       .catch((err) => console.error(err));
+  //   }
+  // }, []);
+
   useEffect(() => {
     if (Cookies.get("authToken")) {
       Axios.get("http://localhost:5000/api/users/login", {
-        params: { token: Cookies.get("authToken") },
+        headers: {
+          Authorization: Cookies.get("authToken"),
+        },
       })
         .then((response) => {
           console.log(response.data);
-          history.push("/");
+          if (response.data.message === "User already logged in!") {
+            history.push("/");
+          }
         })
         .catch((err) => console.error(err));
     }

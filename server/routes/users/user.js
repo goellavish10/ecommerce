@@ -8,6 +8,7 @@ const {
   authorization,
   isAdminAuthorization,
   isAuthenticated,
+  isLoggedIn,
 } = require("../auth/auth");
 
 // REGISTER USER
@@ -199,23 +200,12 @@ router.get("/find/:id", isAdminAuthorization, async (req, res) => {
 });
 
 // GET ROUTES (Checking for authentication)
-router.get("/login", (req, res) => {
-  const token = req.query.token;
-
-  const { success, user } = isAuthenticated(token);
-
-  if (success) {
-    return res.json({
-      status: "ok",
-      message: "User already logged in!",
-      user,
-    });
-  } else {
-    return res.json({
-      status: "notAuth",
-      message: "Please log in!",
-    });
-  }
+router.get("/login", isAuthenticated, (req, res) => {
+  return res.json({
+    status: "ok",
+    message: "User already logged in!",
+    user: req.user,
+  });
 });
 
 module.exports = router;

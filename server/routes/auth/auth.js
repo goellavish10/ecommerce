@@ -29,18 +29,20 @@ const isAdminAuthorization = (req, res, next) => {
   });
 };
 
-const isAuthenticated = (token) => {
+const isAuthenticated = (req, res, next) => {
   try {
+    const token = req.headers.authorization;
     const data = jwt.verify(token, process.env.JWT_SECRET);
-    const user = data;
-    return {
-      success: true,
-      user,
-    };
+    req.user = data;
+    next();
   } catch (err) {
     console.log(err);
-    return false;
+    return res.json({ status: "error", error: "Wrong authentication token!" });
   }
 };
 
-module.exports = { authorization, isAdminAuthorization, isAuthenticated };
+module.exports = {
+  authorization,
+  isAdminAuthorization,
+  isAuthenticated,
+};
