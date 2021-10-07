@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { cloudinary } = require("../../utils/cloudinary");
 
 const Product = require("../../Models/Product");
 
@@ -15,6 +16,12 @@ router.get("/", async (req, res) => {
     console.log(err);
     res.json({ status: "error", error: "Something went wrong" });
   }
+});
+
+router.get("/cloud", async (req, res) => {
+  const query = req.query.cat;
+
+  res.json({ data: resources });
 });
 
 module.exports = router;

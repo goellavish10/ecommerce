@@ -1,3 +1,4 @@
+import { Image } from "cloudinary-react";
 const Watches = ({ watches }) => {
   return (
     <div className="images" id="section">
@@ -6,9 +7,11 @@ const Watches = ({ watches }) => {
         {watches.map((watch) => {
           return (
             <div className="box" key={watch._id}>
-              <img
+              <Image
+                key={watch._id}
+                cloudName="lavishproductions"
+                publicId={`ecommerce/${watch.img}`}
                 className="img"
-                src={require("../../assets/" + watch.img + ".jpg").default}
                 alt="watch"
               />
               <h3>&#8377; {watch.price}/-</h3>

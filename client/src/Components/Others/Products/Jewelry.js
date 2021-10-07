@@ -38,7 +38,7 @@ const Jewelry = () => {
             </NavLink>
           </li>
           <li className="btn" onClick={() => setCategory("Fashion")}>
-            <NavLink to="/deals/jewelry/fas-jewelry" activeClassName="act">
+            <NavLink to="/deals/jewelry/fashion" activeClassName="act">
               Fashion Jewelry
             </NavLink>
           </li>
@@ -56,7 +56,7 @@ const Jewelry = () => {
           exact
         />
         <Route
-          path="/deals/jewelry/fas-jewelry"
+          path="/deals/jewelry/fashion"
           render={() => <Fashion fashions={products} />}
           exact
         />

@@ -1,3 +1,4 @@
+import { Image } from "cloudinary-react";
 const Handbags = ({ handbags }) => {
   return (
     <div className="images" id="section">
@@ -6,9 +7,11 @@ const Handbags = ({ handbags }) => {
         {handbags.map((handbag) => {
           return (
             <div className="box" key={handbag._id}>
-              <img
+              <Image
+                key={handbag._id}
+                cloudName="lavishproductions"
+                publicId={`ecommerce/${handbag.img}`}
                 className="img"
-                src={require("../../assets/" + handbag.img + ".jpg").default}
                 alt="handbag"
               />
               <h3>&#8377; {handbag.price}/-</h3>

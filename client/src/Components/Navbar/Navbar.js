@@ -268,8 +268,12 @@ const Navbar = ({ showModal }) => {
           </li>
           {!isLoggedIn && (
             <li>
-              <NavLink to="/signup" activeClassName="active" className="act">
-                {loginPage === "login" ? "Login" : "Sign Up"}
+              <NavLink
+                to={loginPage === "login" ? "/signup" : "/login"}
+                activeClassName="active"
+                className="act"
+              >
+                {loginPage === "login" ? "Sign Up" : "Login"}
               </NavLink>
             </li>
           )}
