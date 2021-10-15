@@ -223,6 +223,9 @@ const Navbar = ({ showModal }) => {
       Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
         },
       })
         .then((response) => {

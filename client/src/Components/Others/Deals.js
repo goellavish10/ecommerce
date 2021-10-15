@@ -504,7 +504,13 @@ const Deals = () => {
   const location = useLocation();
 
   const fetchProducts = useCallback((cat) => {
-    Axios.get(baseAdress + `/api/products?cat=${cat}`).then((response) => {
+    Axios.get(baseAdress + `/api/products?cat=${cat}`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      },
+    }).then((response) => {
       setProducts(response.data.data);
     });
   }, []);

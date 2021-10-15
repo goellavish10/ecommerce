@@ -118,6 +118,9 @@ const SignUp = () => {
       Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
         },
       })
         .then((response) => {
@@ -156,11 +159,21 @@ const SignUp = () => {
   async function addUserHandler() {
     try {
       setIsLoading(true);
-      const response = await Axios.post(baseAdress + "/api/users/register", {
-        name: enteredName,
-        email: enteredEmail,
-        password: passRef.current.value,
-      });
+      const response = await Axios.post(
+        baseAdress + "/api/users/register",
+        {
+          name: enteredName,
+          email: enteredEmail,
+          password: passRef.current.value,
+        },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers":
+              "Origin, X-Requested-With, Content-Type, Accept",
+          },
+        }
+      );
       const data = await response.data;
 
       console.log(data);

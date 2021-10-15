@@ -17,8 +17,6 @@ mongoose.connect(
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
-    server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
   },
   (err) => {
     if (err) return console.log(err);
@@ -31,15 +29,17 @@ app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin:
-      "https://ecommerce-fullstack.netlify.app" || "http://localhost:3000",
-    credentials: true,
+    origin: "https://ecommerce-fullstack.netlify.app",
   })
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
   res.header("Content-Type", "application/json;charset=UTF-8");
-  res.header("Access-Control-Allow-Credentials", true);
+  res.header(
+    "Access-Control-Allow-Credentials",
+    "https://ecommerce-fullstack.netlify.app"
+  );
+  res.header("Access-Control-Allow-Origin", true);
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.send("APP WORKS!");
 });
 app.use("/api/users", userRoute);

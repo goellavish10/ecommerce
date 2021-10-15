@@ -58,7 +58,13 @@ const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
 const Modal = ({ show, close }) => {
   const history = useHistory();
   const logoutHandler = () => {
-    Axios.get(baseAdress + "/api/users/logout").then((response) => {
+    Axios.get(baseAdress + "/api/users/logout", {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      },
+    }).then((response) => {
       const data = response.data;
       if (data.status === "ok") {
         console.log("Logged Out");
