@@ -215,6 +215,7 @@ const StyledNavbar = styled.header`
 
 const Navbar = ({ showModal }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -228,6 +229,7 @@ const Navbar = ({ showModal }) => {
           console.log(response.data);
           if (response.data.message === "User already logged in!")
             setIsLoggedIn(true);
+          if (response.data.user.isAdmin === true) setIsAdmin(true);
         })
         .catch((err) => console.error(err));
     }
@@ -281,6 +283,17 @@ const Navbar = ({ showModal }) => {
             <li>
               <NavLink to="/" onClick={popupHandler}>
                 Logout
+              </NavLink>
+            </li>
+          )}
+          {isAdmin && (
+            <li>
+              <NavLink
+                to="/add-product"
+                activeClassName="active"
+                className="act"
+              >
+                Add Product
               </NavLink>
             </li>
           )}

@@ -1,6 +1,8 @@
 TODO: 
      ☐ Add Cart Functionality
      ☐ Add Email verification OTP
-     ☐ Move products to *Cloudinary*
+     ✔ Move products to *Cloudinary* @done(21-10-07 22:23)
      ☐ CRON Job to invalidate Email verification OTP
      ☐ Add Product adding page for admin
+
+   

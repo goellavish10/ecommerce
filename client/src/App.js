@@ -12,6 +12,7 @@ import Deals from "./Components/Others/Deals";
 import SignUp from "./Components/User/SignUp";
 import Login from "./Components/User/Login";
 import Modal from "./Components/Modal/Modal";
+import AddProduct from "./Components/Admin/AddProduct";
 const App = () => {
   const [show, setShow] = useState(false);
   return (
@@ -50,6 +51,16 @@ const App = () => {
             </Fragment>
           )}
           exact
+        />
+        <Route
+          path="/add-product"
+          exact
+          render={() => (
+            <Fragment>
+              <Navbar showModal={() => setShow(true)} />
+              <AddProduct />
+            </Fragment>
+          )}
         />
         <Route
           exact
