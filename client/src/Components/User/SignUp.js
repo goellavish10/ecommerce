@@ -95,6 +95,8 @@ const StyledInput = styled.input`
   outline: none;
 `;
 
+const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
+
 const SignUp = () => {
   const history = useHistory();
   // useEffect(() => {
@@ -113,7 +115,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (Cookies.get("authToken")) {
-      Axios.get("http://localhost:5000/api/users/login", {
+      Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
         },
@@ -154,14 +156,11 @@ const SignUp = () => {
   async function addUserHandler() {
     try {
       setIsLoading(true);
-      const response = await Axios.post(
-        "http://localhost:5000/api/users/register",
-        {
-          name: enteredName,
-          email: enteredEmail,
-          password: passRef.current.value,
-        }
-      );
+      const response = await Axios.post(baseAdress + "/api/users/register", {
+        name: enteredName,
+        email: enteredEmail,
+        password: passRef.current.value,
+      });
       const data = await response.data;
 
       console.log(data);
@@ -169,7 +168,7 @@ const SignUp = () => {
       if (data.status === "ok") {
         setIsLoading(false);
         alert(data.message);
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "/";
       }
     } catch (err) {
       console.log(err);

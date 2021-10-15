@@ -639,7 +639,6 @@ const StyledDiv = styled.div`
     }
   }
 `;
-
 const Business = () => {
   return (
     <StyledDiv>

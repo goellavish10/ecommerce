@@ -65,11 +65,11 @@ const StyledDiv = styled.div`
     }
   }
 `;
-
+const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
 const AddProduct = () => {
   useEffect(() => {
     if (Cookies.get("authToken")) {
-      Axios.get("http://localhost:5000/api/users/login", {
+      Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
         },
@@ -105,7 +105,7 @@ const AddProduct = () => {
   const handleFormSubmission = async (e) => {
     e.preventDefault();
     if (!previewSource) return;
-    await Axios.post("http://localhost:5000/api/products/add-product", {
+    await Axios.post(baseAdress + "/api/products/add-product", {
       img: previewSource,
       price: priceRef.current.value,
       cat: catRef.current.value,

@@ -95,11 +95,13 @@ const StyledInput = styled.input`
   outline: none;
 `;
 
+const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
+
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     if (Cookies.get("authToken")) {
-      Axios.get("http://localhost:5000/api/users/login", {
+      Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
         },
@@ -131,7 +133,7 @@ const Login = () => {
   const loginHandler = async () => {
     try {
       Axios.post(
-        "http://localhost:5000/api/users/login",
+        baseAdress + "/api/users/login",
         {
           email: enteredEmail,
           password: passRef.current.value,

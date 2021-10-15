@@ -498,17 +498,15 @@ const StyledDiv = styled.div`
     }
   }
 `;
-
+const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
 const Deals = () => {
   const [products, setProducts] = useState([]);
   const location = useLocation();
 
   const fetchProducts = useCallback((cat) => {
-    Axios.get(`http://localhost:5000/api/products?cat=${cat}`).then(
-      (response) => {
-        setProducts(response.data.data);
-      }
-    );
+    Axios.get(baseAdress + `/api/products?cat=${cat}`).then((response) => {
+      setProducts(response.data.data);
+    });
   }, []);
 
   useEffect(() => {

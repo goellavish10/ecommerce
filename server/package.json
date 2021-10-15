@@ -6,8 +6,8 @@
   "author": "Lavish Goyal",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.js",
-    "prod": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

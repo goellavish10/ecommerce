@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-
+const baseAdress = "https://ecommerce-backend-react.herokuapp.com";
 const StyledNavbar = styled.header`
   .navbar {
     display: flex;
@@ -220,7 +220,7 @@ const Navbar = ({ showModal }) => {
 
   useEffect(() => {
     if (Cookies.get("authToken")) {
-      Axios.get("http://localhost:5000/api/users/login", {
+      Axios.get(baseAdress + "/api/users/login", {
         headers: {
           Authorization: Cookies.get("authToken"),
         },
