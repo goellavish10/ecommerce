@@ -31,7 +31,8 @@ app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:
+      "https://ecommerce-fullstack.netlify.app" || "http://localhost:3000",
     credentials: true,
   })
 );
